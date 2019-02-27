@@ -1,12 +1,23 @@
 filepath = 'read_this.txt'
-with open(filepath, 'r') as fp, open("in.txt", 'wt') as nf:
-    line = fp.readline()
-    nf.write(line.strip())
+new = 'in.txt'
+with open(filepath, 'r') as fp, open(new, 'w+') as nf:
+    print(fp, nf)
+    line = fp.readline().strip()
+    print(line)
+    #while (len(fp.read()) and (not line)):
+        #print(line)
+       # line = fp.readline().strip()
+    
+    #print("I made it into else")
+    #line = fp.readline().strip()
+    #print("0",(not line),"0")
+    #nf.write(line)
     count = 1
     while line:
         print("Line {} : {}".format(count, line.strip()))
-        line = fp.readline()
+        #line = fp.readline()
         nf.write(line.strip())
+        line = fp.readline()
         count += 1
 
 
